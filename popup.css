@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  width: 350px;
+  max-height: 500px;
+}
+
+.container {
+  padding: 15px;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+h2 {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #000000;
+}
+
+.settings-section {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.setting label {
+  flex: 1;
+  font-size: 14px;
+}
+
+.setting input {
+  width: 60px;
+  padding: 5px;
+  margin: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  height: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #005BDD;
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.save-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.projects-section {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.project-list {
+  list-style: none;
+}
+
+.project-item {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.project-item:hover {
+  background-color: #f0f7fc;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+/* 동기화 전용 항목 스타일 */
+.project-item.sync-only {
+  color: #888;
+  background-color: #f9f9f9;
+  border-left: 3px solid #3498db;
+  padding-left: 7px;
+}
+
+.project-item.sync-only:hover {
+  background-color: #f0f7fc;
+}
+
+.no-projects, .loading, .no-saves {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.loading:after {
+  content: "...";
+  animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+  0% { content: "."; }
+  33% { content: ".."; }
+  66% { content: "..."; }
+}
+
+.project-details {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 350px;
+}
+
+.hidden {
+  display: none;
+}
+
+.back-button {
+  background-color: #95a5a6;
+  margin-bottom: 10px;
+}
+
+.back-button:hover {
+  background-color: #7f8c8d;
+}
+
+.saves-list {
+  margin-top: 10px;
+}
+
+.save-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.save-item:last-child {
+  border-bottom: none;
+}
+
+.save-timestamp {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+.save-actions {
+  margin-top: 8px;
+}
+
+.load-btn {
+  background-color: #2ecc71;
+  margin-right: 5px;
+}
+
+.load-btn:hover {
+  background-color: #27ae60;
+}
+
+/* 디버깅 섹션 스타일 */
+#refreshListBtn, #showStorageBtn {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+#refreshListBtn {
+  background-color: #f39c12;
+}
+
+#refreshListBtn:hover {
+  background-color: #e67e22;
+}
+
+#showStorageBtn {
+  background-color: #9b59b6;
+}
+
+#showStorageBtn:hover {
+  background-color: #8e44ad;
+}
+
+/* 구글 계정 동기화 상태 표시 */
+.sync-status {
+  font-size: 11px;
+  color: #777;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.sync-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.sync-active {
+  color: #27ae60;
+}
+
+.sync-error {
+  color: #e74c3c;
+} 

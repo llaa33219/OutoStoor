@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "엔트리-OutoStoor",
+  "version": "1.0",
+  "description": "엔트리 작품을 일정 간격으로 자동으로 저장해줍니다.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "alarms",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.playentry.org/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.playentry.org/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://*.playentry.org/*"]
+    }
+  ],
+  "storage": {
+    "managed_schema": "schema.json"
+  }
+} 

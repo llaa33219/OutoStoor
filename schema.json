@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "saveInterval": {
+      "type": "integer",
+      "description": "자동 저장 간격 (분)"
+    },
+    "projectIds": {
+      "type": "array",
+      "description": "저장된 작품 ID 목록",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+} 
